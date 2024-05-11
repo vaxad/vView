@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* input[type="range"]{
+  -webkit-appearance: none;
+} */
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  input[type='range'] {
+    overflow: hidden;
+    width: 100%;
+    height: 4px;
+    -webkit-appearance: none;
+    background-color: gray;
+  }
+  
+  input[type='range']::-webkit-slider-runnable-track {
+    height: 10px;
+    -webkit-appearance: none;
+    color: white;
+    cursor: pointer;
+    margin-top: -1px;
+  }
+  
+  input[type='range']::-webkit-slider-thumb {
+    width: 10px;
+    -webkit-appearance: none;
+    height: 10px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: -99999px 0 0 99999px white;
+  }
+
+
+}
+
+/* FF/
+input[type="range"]::-moz-range-progress {
+  background-color: #43e5f7; 
+}
+input[type="range"]::-moz-range-track {  
+  background-color: #9a905d;
+}
+/* IE*/
+input[type="range"]::-ms-fill-lower {
+  background-color: white; 
+}
+input[type="range"]::-ms-fill-upper {  
+  background-color: gray;
+}
+
+body {
+  --s: 25vmin;
+  --p: calc(var(--s) / 2);
+  --c1: red;
+  --c2: black;
+  --c3: black;
+  --bg: var(--c3);
+  --d: 4000ms;
+  --e: cubic-bezier(0.76, 0, 0.24, 1);
+  
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(45deg, var(--c1) 25%, transparent 25%),
+    linear-gradient(-45deg, var(--c1) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, var(--c2) 75%),
+    linear-gradient(-45deg, transparent 75%, var(--c2) 75%);
+  background-size: var(--s) var(--s);
+  background-position: 
+    calc(var(--p) *  1) calc(var(--p) *  0), 
+    calc(var(--p) * -1) calc(var(--p) *  1), 
+    calc(var(--p) *  1) calc(var(--p) * -1), 
+    calc(var(--p) * -1) calc(var(--p) *  0);
+  animation: 
+    color var(--d) var(--e) infinite,
+    position var(--d) var(--e) infinite;
+}
+
+@keyframes color {
+  0%, 25% {
+    --bg: var(--c3);
+  }
+  26%, 50% {
+    --bg: var(--c1);
+  }
+  51%, 75% {
+    --bg: var(--c3);
+  }
+  76%, 100% {
+    --bg: var(--c2);
+  }
+}
+
+@keyframes position {
+  0% {
+    background-position: 
+      calc(var(--p) *  1) calc(var(--p) *  0), 
+      calc(var(--p) * -1) calc(var(--p) *  1), 
+      calc(var(--p) *  1) calc(var(--p) * -1), 
+      calc(var(--p) * -1) calc(var(--p) *  0);
+  }
+  25% {
+    background-position: 
+      calc(var(--p) *  1) calc(var(--p) *  4), 
+      calc(var(--p) * -1) calc(var(--p) *  5), 
+      calc(var(--p) *  1) calc(var(--p) *  3), 
+      calc(var(--p) * -1) calc(var(--p) *  4);
+  }
+  50% {
+    background-position: 
+      calc(var(--p) *  3) calc(var(--p) * 8), 
+      calc(var(--p) * -3) calc(var(--p) * 9), 
+      calc(var(--p) *  2) calc(var(--p) * 7), 
+      calc(var(--p) * -2) calc(var(--p) * 8);
+  }
+  75% {
+    background-position: 
+      calc(var(--p) *  3) calc(var(--p) * 12), 
+      calc(var(--p) * -3) calc(var(--p) * 13), 
+      calc(var(--p) *  2) calc(var(--p) * 11), 
+      calc(var(--p) * -2) calc(var(--p) * 12);
+  }
+  100% {    
+    background-position: 
+      calc(var(--p) *  5) calc(var(--p) * 16), 
+      calc(var(--p) * -5) calc(var(--p) * 17), 
+      calc(var(--p) *  5) calc(var(--p) * 15), 
+      calc(var(--p) * -5) calc(var(--p) * 16);
+  }
+}
+
+@media (prefers-reduced-motion) {
+  body {
+    animation: none;
+  }
+}

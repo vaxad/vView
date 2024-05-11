@@ -1,0 +1,46 @@
+.rangeInput {
+    /* Track */
+    --track-color: #ddd;
+    --track-width: 4px; /* Slim width */
+    --track-border-radius: 2px;
+    
+    /* Thumb */
+    --thumb-color: #333;
+    --thumb-size: 16px;
+    --thumb-border-radius: 50%; /* Rounded thumb */
+  
+    /* Styles */
+    width: var(--track-width); /* Set width for vertical range */
+    height: 100px; /* Set height for vertical range */
+    appearance: none;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    transform: rotate(90deg); /* Rotate for vertical range */
+  
+    &::-webkit-slider-runnable-track {
+      width: var(--track-width); /* Set width for vertical track */
+      background: var(--track-color);
+      border-radius: var(--track-border-radius);
+    }
+  
+    &::-webkit-slider-thumb {
+      width: var(--thumb-size);
+      height: var(--thumb-size);
+      background: var(--thumb-color);
+      border-radius: var(--thumb-border-radius);
+      appearance: none;
+      margin-left: calc((var(--track-width) - var(--thumb-size)) / 2); /* Center thumb vertically */
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+  
+    &:focus {
+      outline: none;
+    }
+  }
+  
+  .progressBar {
+    width: 100%;
+  }
+  
