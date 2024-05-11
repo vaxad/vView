@@ -32,10 +32,6 @@ body {
   }
 }
 
-/* input[type="range"]{
-  -webkit-appearance: none;
-} */
-
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   input[type='range'] {
     overflow: hidden;
@@ -65,14 +61,6 @@ body {
 
 }
 
-/* FF/
-input[type="range"]::-moz-range-progress {
-  background-color: #43e5f7; 
-}
-input[type="range"]::-moz-range-track {  
-  background-color: #9a905d;
-}
-/* IE*/
 input[type="range"]::-ms-fill-lower {
   background-color: white; 
 }

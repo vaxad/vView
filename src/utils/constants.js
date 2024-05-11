@@ -1,4 +1,4 @@
-const videos = ["/videos/Chill Eve.mp4","/videos/Japan View.mp4", "/videos/Scenary View.mp4", "/videos/The Kid in You.mp4"]
+const videos = ["/videos/Chill Eve.mp4","/audios/Music.mp3","/videos/Japan View.mp4", "/videos/Scenary View.mp4", "/audios/Drums.mp3", "/videos/The Kid in You.mp4"]
 
 function generateRandomColor() {
     const red = Math.floor(Math.random() * 200); 

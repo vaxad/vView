@@ -56,8 +56,8 @@ const Player = ({ miniPlayer }) => {
   useEffect(() => {
     setIsPlaying(false)
     setCurrentTime(0)
-    setVolume(0.5)
-    setPlaybackRate(1)
+    // setVolume(0.5)
+    // setPlaybackRate(1)
   }, [src])
 
   function numberToString(number) {
@@ -239,7 +239,7 @@ const Player = ({ miniPlayer }) => {
 
   return (
     <div className={`flex flex-col w-full gap-6   ${fullScreen ? " h-[100vh] bg-black justify-center items-center" : "p-6"}`}>
-      <div onMouseOver={() => setHover(true)} onMouseLeave={() => setHover(false)} className={`relative w-full aspect-video ${fullScreen?"":" rounded-lg"} overflow-clip `}>
+      <div onMouseOver={() => setHover(true)} style={{backgroundImage:"url(/images/music.jpg)", backgroundRepeat:"no-repeat", backgroundSize:"cover"}} onMouseLeave={() => setHover(false)} className={`relative w-full aspect-video ${fullScreen?"":" rounded-lg"} overflow-clip `}>
         <video controls={false} className=' w-full aspect-video ' src={src} ref={playerRef} onTimeUpdate={handleTimeUpdate} />
 
         <div className={`absolute top-0 left-0 p-2 z-20 w-full flex flex-row items-center justify-between ${fullScreen?"":"rounded-lg"} overflow-clip`} style={{ opacity: !mouseStill && hover ? 0.7 : 0 }}>
