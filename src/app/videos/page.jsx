@@ -1,5 +1,4 @@
 import MiniPlayer from '@/components/MiniPlayer';
-
 import VideoCard from '@/components/VideoCard';
 import { videos } from '@/utils/constants';
 

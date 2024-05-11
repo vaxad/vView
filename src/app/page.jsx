@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
@@ -23,15 +22,15 @@ export default function Home() {
       </div>
 
       <div className="relative flex place-items-center ">
-        <h1 className=" text-5xl font-black text-center underline decoration-slate-50">vView - Video Player</h1>
+        <h1 className=" text-2xl text-nowrap py-5 md:text-5xl font-black text-center underline decoration-slate-50">vView - Video Player</h1>
       </div>
 
       <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-      <Link
+        <Link
           href="/videos"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
+          <h2 className={`mb-3 text-2xl text-nowrap font-semibold`}>
             View Videos{" "}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
@@ -42,12 +41,12 @@ export default function Home() {
           </p>
         </Link>
         <a
-          href="https://"
+          href="https://drive.google.com/file/d/1ahtcnbn6rbfQhcxHLEcSfRBg7f2C-2K8/view?usp=sharing"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
+          <h2 className={`mb-3 text-nowrap text-2xl font-semibold`}>
             Resume{" "}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
@@ -59,12 +58,12 @@ export default function Home() {
         </a>
 
         <a
-          href="https://"
+          href="https://github.com/vaxad/vView"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
+          <h2 className={`mb-3 text-2xl text-nowrap font-semibold`}>
             Repository{" "}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
@@ -76,12 +75,12 @@ export default function Home() {
         </a>
 
         <a
-          href="https://"
+          href="https://v-view.vercel.app/"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
+          <h2 className={`mb-3 text-nowrap text-2xl font-semibold`}>
             Live Site{" "}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
