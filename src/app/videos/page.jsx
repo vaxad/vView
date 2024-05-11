@@ -1,5 +1,6 @@
 import MiniPlayer from '@/components/MiniPlayer';
-import VideoCard from '@/components/videoCard';
+
+import VideoCard from '@/components/VideoCard';
 import { videos } from '@/utils/constants';
 
 export default function Page() {
