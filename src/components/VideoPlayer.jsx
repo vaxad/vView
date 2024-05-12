@@ -18,10 +18,6 @@ const Player = ({ miniPlayer }) => {
   const { setCurrentVideo, nextVids, prevVids, currentVideo, fullScreen, setFullScreen, setMiniPlayer } = videoStore();
   const router = useRouter();
   const src = currentVideo;
-  useEffect(() => {
-    console.log({ currentVideo, nextVids, prevVids });
-
-  }, [currentVideo, nextVids, prevVids])
 
   function onMouseStill(callback, delay = 2000) {
     let timeoutId;
@@ -77,14 +73,13 @@ const Player = ({ miniPlayer }) => {
   }
   useEffect(() => {
     const player = playerRef.current;
-
-
     if (isPlaying) {
       player.play();
     } else {
       player.pause();
     }
   }, [isPlaying]);
+
 
   useEffect(() => {
     const player = playerRef.current;
@@ -101,8 +96,7 @@ const Player = ({ miniPlayer }) => {
       setIsPlaying(false)
       setCurrentTime(0)
     }
-  }, [currentTime])
-
+  }, [currentTime])  
 
   const handlePlayPause = () => {
     setIsPlaying(!isPlaying);
@@ -155,10 +149,14 @@ const Player = ({ miniPlayer }) => {
 
   const toggleMiniPlayer = () => {
     if (miniPlayer) {
-      router.push("/videos/view")
+      router.push("/videos/view");
       setMiniPlayer(false);
     } else {
-      router.push("/videos")
+      if (document.fullscreenElement) {
+        document.exitFullscreen();
+        setFullScreen(false)
+      }
+      router.push("/videos");
       setMiniPlayer(true);
     }
   }
